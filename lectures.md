@@ -6,5 +6,5 @@ sidebar:
     nav: blog-roll
 ---
 
-# Phân tích và thiết kế giải thuật
+# Phân tích và thiết kế thuật toán
 * Bài 1: [Khái niệm tiệm cận.](/Khái-niệm-tiệm-cận/)
