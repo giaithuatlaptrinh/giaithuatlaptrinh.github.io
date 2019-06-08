@@ -82,7 +82,7 @@ Chú ý, hằng số $n_0$ có thể phụ thuộc vào $c$.  Xét ví dụ áp 
 
 <img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2015/05/growth-rate.png" alt="Hình 1">
 
-> Hình (a) minh hoạ trường hợp $f(n) = \Theta(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm giữa  hai đường cong $c_1 g(n)$ và $c_2 g(n)$ với $c_2 \geq c_1$ là hai hằng số (nào đó). Hình (b) minh hoạ trường hợp $f(n) = O(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm dưới đường cong $c g(n)$ với $c$ là một hằng số (nào đó).  Hình (c) minh hoạ trường hợp $f(n) = \Omega(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm trên đường cong $c g(n)$ với $c$ là một hằng số (nào đó). 
+> Hình (a) minh hoạ trường hợp $f(n) = \Theta(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm giữa  hai đường cong $c_1 g(n)$ và $c_2 g(n)$ với $c_2 \geq c_1$ là hai hằng số (nào đó). Hình (b) minh hoạ trường hợp $f(n) = O(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm dưới đường cong $c g(n)$ với $c$ là một hằng số (nào đó).  Hình (c) minh hoạ trường hợp $f(n) = \Omega(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm trên đường cong $c g(n)$ với $c$ là một hằng số (nào đó). (Hình được lấy từ tài liệ tham khảo [1].)
 
 # Tham khảo 
 
