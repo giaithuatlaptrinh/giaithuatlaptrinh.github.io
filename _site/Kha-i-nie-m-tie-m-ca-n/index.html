@@ -1,0 +1,533 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="vn" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Khái Niệm Tiệm Cận - Giải Thuật và Lập Trình</title>
+<meta name="description" content="Bài 1: Khái niệm tiệm cận">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="vn_VN">
+<meta property="og:site_name" content="Giải Thuật và Lập Trình">
+<meta property="og:title" content="Khái Niệm Tiệm Cận">
+<meta property="og:url" content="http://localhost:4000/Kha-i-nie-m-tie-m-ca-n/">
+
+
+  <meta property="og:description" content="Bài 1: Khái niệm tiệm cận">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-04-01T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Kha-i-nie-m-tie-m-ca-n/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hung Le",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Giải Thuật và Lập Trình Feed">
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+<!-- https://t.co/dKP3o1e -->
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">Giải Thuật và Lập Trình</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/lectures" >Bài Giảng</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about" >About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Hùng Lê</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Lang thang
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:hunglv.k52tncntt@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+            <li><a href="https://hunglvosu.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  <div class="fb-page"
+      data-href="https://www.facebook.com/thietkegiaithuat/"
+      data-width="100"
+      data-hide-cover="false"
+      data-show-facepile="false"></div>
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Khái Niệm Tiệm Cận">
+    <meta itemprop="description" content="Bài 1: Khái niệm tiệm cận">
+    <meta itemprop="datePublished" content="April 01, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Khái Niệm Tiệm Cận
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        
+<h2 id="bài-1-khái-niệm-tiệm-cận">Bài 1: Khái niệm tiệm cận</h2>
+
+<p>Phân tích (thời gian) thuật toán về cơ bản là đếm số thao tác cơ bản mà thuật toán thực hiện. Tuy nhiên, việc đếm chính xác số thao tác cơ bản nhiều lúc không tầm thường hoặc phụ thuộc vào dữ liệu đầu vào (ví dụ lệnh <b>if-then-else</b>). Do đó, trong thực tế phân tích thuật toán, ta chỉ đếm <b>tương đối</b> số thao tác cơ bản mà thôi. Khái niệm big-O, kí hiệu $O(.)$, chính là một công cụ cho phép chúng ta biểu diễn tương đối độ phức tạp của thuật toán một cách đơn giản. Bài này chúng ta sẽ tìm hiểu định nghĩa hình thức của các khía niệm $O(.), o(.), \Omega(.), \Theta(.)$. Bạn đọc có thể <a href="http://www.giaithuatlaptrinh.com/?p=2272">tham khảo trước</a> ý nghĩa các khái niệm này cũng nhưng các sử dụng trong phân tích thuật toán thực tế.</p>
+
+<p>Trong các kí hiệu dưới đây, $T(n)$ biểu thị một hàm số của biến (số nguyên) $n$. Thông thường ta dùng $T(n)$ để kí hiệu thời gian tính toán của một thuật toán.</p>
+
+<h1 id="kí-hiệu-big-o">Kí hiệu big-O.</h1>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Định nghĩa 1:</span></strong> Ta viết $T(n) = O(f(n))$ nếu tồn tại hằng số $c , n_0 &gt; 0$ sao cho $T(n) \leq cf(n)$ với mọi $n \geq n_0.$</p>
+
+<hr />
+
+<p>Để hiểu định nghĩa 1, ta xét hai ví dụ:</p>
+
+<blockquote>
+  <p><strong><em>Ví dụ 1</em></strong>: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta suy ra $T(n) = O(n^2)$ vì $3n^2 + 2n +4 \leq 4n^2$ với mọi $n \geq 1000$. Ở đây ta chọn $c= 4, n_0 = 1000$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong><em>Ví dụ 2</em></strong>: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta có thể viết  $T(n) = O(n^3)$ vì $3n^2 + 2n +4$ &lt; $n^3$ với mọi $n \geq 1000$. Ở đây ta chọn $c= 1, n_0 = 1000$.</p>
+</blockquote>
+
+<p>Trong cả hai ví dụ ta đều xét cùng một biểu thức $T(n) = 3n^2 + 2n +4$, và theo định nghĩa 1, viết $T(n) = O(n^2)$ và $T(n) = O(n^3)$ đều đúng. Câu hỏi đặt ra là ta nên chọn cách viết nào? Thông thường ta sẽ chọn cách viết thể hiện “đúng nhất” bản chất tăng/giảm của hàm $T(n)$, do đó, trong trường hợp này ta nên viết $T(n) = O(n^2)$. Khái niệm big-O thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.</p>
+
+<p>Từ định nghĩa, ta dễ dàng suy ra tính chất sau:</p>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Tính chất 1:</span></strong> Nếu $T(n) = O(f(n))$ và $f(n) = O(g(n))$ thì $T(n) = O(g(n))$.</p>
+
+<hr />
+
+<p><em>Chứng minh:</em> Theo định nghĩa 1, tồn tại hai hằng số (dương) $c_1$ và $n_1$ sao cho $T(n) \leq c_1f(n)$ với mọi $n\geq n_1$. Cũng theo định nghĩa 1, tồn tại hai hằng số $c_2$ và $n_2$ sao cho $f(n) \leq c_2g(n)$ với mọi $n\geq n_2$. Chọn $c_3 = c_1\cdot c_2$ và $n_3 = \max(n_1,n_2)$, ta suy ra $T(n) \leq c_3 g(n)$ với mọi $n\geq n_3$ (dpcm).</p>
+
+<h1 id="kí-hiệu-omega">Kí hiệu $\Omega$</h1>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Định nghĩa 2:</span></strong> Ta viết $T(n) = \Omega(f(n))$ nếu tồn tại hai hằng số $c , n_0&gt; 0$ sao cho $T(n) \geq cf(n)$ với mọi $n \geq n_0$.</p>
+
+<hr />
+<p>Xét hai ví dụ áp dụng sau:</p>
+
+<blockquote>
+  <p><strong>Ví dụ 3</strong>: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 2, ta suy ra 
+$T(n) = \Omega(n^2)$ vì $3n^2 + 2n +4 \geq 3n^2$ với mọi $n \geq 1$. Ở đây ta chọn $c= 3, n_0 = 1$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Ví dụ 4:</strong> Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 2, ta suy ra $T(n) = \Omega(n)$ vì $3n^2 + 2n +4 \geq n$ với mọi $n \geq 1$. Ở đây ta chọn $c= 1, n_0 = 1$.</p>
+</blockquote>
+
+<p>Như đã nói ở phần big-O, ví dụ 3 và 4 cung cấp hai cách viết khác nhau cho cùng một hàm $T(n)$, và ta thường chọn cách viết “gần nhất”. Có nghĩa là ở đây ta nên viết $T(n) = \Omega(n^2)$.  Khái niệm $\Omega$ thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.</p>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Tính chất 2:</span></strong> Nếu $T(n) = \Omega(f(n))$ và $f(n) = \Omega(g(n))$ thì $T(n) = \Omega(g(n))$.</p>
+
+<hr />
+<p>Chứng minh tương tự như tính chất 1; ta coi đây là bài tập cho bạn đọc.</p>
+
+<h1 id="khái-niệm-theta">Khái niệm $\Theta$</h1>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Định nghĩa 3:</span></strong> Ta viết $T(n) = \Theta(f(n))$ nếu $T(n) = O(f(n))$ và $T(n) = \Omega(n)$.</p>
+
+<hr />
+<blockquote>
+  <p><strong>Ví dụ 5:</strong> Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 3 $T(n) = \Theta(n^2)$ vì
+$T(n) = O(n^2)$ (theo định nghĩa 1) và $T(n) = \Omega(n)$ theo định nghĩa 2.</p>
+</blockquote>
+
+<p>Như vậy, nếu $T(n) = \Theta(f(n))$, điều đó có nghĩa là thuật toán đó có thời gian chạy <em>“đúng”</em> là $f(n)$. Khái niệm $\Theta$ phù hợp để phân tích cả cận trên và cận dưới của thuật toán.</p>
+
+<p>Một câu hỏi cho bạn đọc tự suy nghẫm: nếu viết hàm $T(n)$ trong ví dụ 5 là $T(n) = \Theta(n^3)$ thì có đúng hay không?</p>
+
+<h1 id="khái-niệm-o">Khái niệm $o$</h1>
+
+<hr />
+<p><strong><span style="color:dodgerblue">Định nghĩa 4:</span></strong> Ta viết $T(n) = o(f(n))$ nếu <em>với mọi</em> hằng số $c &gt; 0$, tồn tại hằng số $ n_0 &gt; 0$ sao cho: $T(n) \leq cf(n)$ với mọi $n \geq n_0.$</p>
+
+<hr />
+
+<p>Chú ý, hằng số $n_0$ có thể phụ thuộc vào $c$.  Xét ví dụ áp dụng sau:</p>
+
+<blockquote>
+  <p><strong>Ví dụ 6</strong>: Cho $T(n) = 3n^2 + 2n +4$.  Theo định nghĩa 4, với mọi hằng số $c &gt; 0$ bất kì,  $T(n) \leq  c\cdot n^3$ với mọi $n\geq \max(\frac{9}{c}, 1)$ vì:
+ <script type="math/tex">cn^3 = c \cdot n \cdot n^2 \geq 9n^2 \geq 3n^2 + 2n + 4</script></p>
+</blockquote>
+
+<p>Ý nghĩa của $o(.)$ đó là nếu $T(n) = o(f(n))$ thì $T(n)$ tăng chậm hơn $f(n)$ “rất nhiều” khi $n$ đủ lớn. Hình sau minh hoạ các khái niệm một cách trực quan hơn.</p>
+
+<p><img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2015/05/growth-rate.png" alt="Hình 1" /></p>
+
+<blockquote>
+  <p>Hình (a) minh hoạ trường hợp $f(n) = \Theta(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm giữa  hai đường cong $c_1 g(n)$ và $c_2 g(n)$ với $c_2 \geq c_1$ là hai hằng số (nào đó). Hình (b) minh hoạ trường hợp $f(n) = O(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm dưới đường cong $c g(n)$ với $c$ là một hằng số (nào đó).  Hình (c) minh hoạ trường hợp $f(n) = \Omega(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm trên đường cong $c g(n)$ với $c$ là một hằng số (nào đó).</p>
+</blockquote>
+
+<h1 id="tham-khảo">Tham khảo</h1>
+
+<p>[1] Cormen, Thomas H.; Leiserson, Charles E., Rivest, Ronald L., Stein, Clifford (2001) [1990]. <b><i> Introduction to Algorithms (2nd ed.) </i></b>. MIT Press and McGraw-Hill. ISBN 0-262-03293-7.</p>
+
+<p>[2] Avrim Blum: Lecture notes on Algorithms, <a href="http://www.cs.cmu.edu/afs/cs/academic/class/15451-f11/www/lectures/lects1-10.pdf">http://www.cs.cmu.edu/afs/cs/academic/class/15451-f11/www/lectures/lects1-10.pdf</a> . Carnegie Mellon University, 2011.</p>
+
+<h1 id="bài-tập">Bài tập</h1>
+
+<p><strong>Bài tập 1:</strong> Cho $T(n) = 2n + 1$.</p>
+<ul>
+  <li>(a) Chứng minh rằng $T(n) = O(n^2)$.</li>
+  <li>(b) Nếu viết $T(n) = O(n)$ thì có sai không?</li>
+  <li>(c) Nếu viết $T(n) = O(\sqrt{n})$ thì có sai không?</li>
+</ul>
+
+<p><strong>Bài tập 2:</strong> Cho $T(n) = n! + 3n$.</p>
+<ul>
+  <li>(a) Chứng minh rằng $T(n) = \Omega(2^n)$.</li>
+  <li>(b) Nếu viết $T(n) = O(10^n)$ thì có sai không?</li>
+  <li>(c) Nếu viết $T(n) = O(n^n)$ thì có sai không?</li>
+</ul>
+
+<p><strong>Bài tập 3:</strong> Cho $T(n) = \log(n!)$.  Chứng minh rằng $T(n) = \Theta(n \log n)$ với cơ số của logarith là $2$.</p>
+
+<p><strong>Bài tập 4:</strong> Hàm $f(n)$ được gọi là <em>tăng nhanh hơn</em> hàm $g(n)$ nếu $g(n) = O(f(n))$. Sắp xếp các hàm sau theo thứ tự tăng dần của độ tăng.</p>
+<ul>
+  <li>(a) $(\frac{3}{2})^n \quad n^3 \quad \log^2 n \quad \log (n!) \quad 2^{2^n} \quad n^{\frac{1}{\log n}}$.</li>
+  <li>(b) $(2)^{\log n} \quad (\log n)^{\log n} \quad e^n \quad 4^{\log n} \quad (n+1)! \quad \sqrt{\log n}$.</li>
+</ul>
+
+<p><strong>Bài tập 5:</strong> Chứng minh tính chất 2 phát biểu ở trên.</p>
+
+<p><strong>Bài tập 6:</strong> Những kết luận sau đúng hay sai? Chứng minh.</p>
+<ul>
+  <li>(a) $f(n) = O(g(n))$ suy ra $g(n) = O(f(n))$.</li>
+  <li>(b) $f(n) + g(n) = \Theta(\min(f(n),g(n)))$.</li>
+  <li>(c) $f(n) = O(g(n))$ suy ra $2^{f(n)} = O(2^{g(n)})$.</li>
+  <li>(d) $f(n) = \Theta(f(n/2))$.</li>
+</ul>
+
+<p><strong>Bài tập 7:</strong> Nếu  $T(n) = \Theta(f(n))$, chứng minh rằng tồn tại ba hằng số $c_1,c_2 , n_0 &gt; 0$ sao cho: $c_1f(n) \leq  T(n) \leq c_2f(n)$ với mọi $n \geq n_0.$</p>
+
+<p><strong>Bài tập 8:</strong>  $T(n) = \Theta(f(n))$ khi và chỉ khi $\lim_{n \rightarrow \infty} \frac{T(n)}{f(n)} = c$ với $c$ là một hằng số lớn hơn 0.</p>
+
+<p><strong>Bài tập 9:</strong>  Chứng minh rằng $T(n) = o(f(n))$ khi và chỉ khi $\lim_{n \rightarrow \infty} \frac{T(n)}{f(n)} = 0$.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-04-01T00:00:00-07:00">April 01, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Kha%CC%81i+Nie%CC%A3%CC%82m+Tie%CC%A3%CC%82m+Ca%CC%A3%CC%82n%20http%3A%2F%2Flocalhost%3A4000%2FKha-i-nie-m-tie-m-ca-n%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FKha-i-nie-m-tie-m-ca-n%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FKha-i-nie-m-tie-m-ca-n%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+            
+      </div>
+    </div>
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Hung Le. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           tex2jax: {
+                           inlineMath: [['$','$'], ['\\(','\\)']],
+                           processEscapes: true
+                           }
+                           });
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=322996821503497&autoLogAppEvents=1"></script>
+  </body>
+</html>

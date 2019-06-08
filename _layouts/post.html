@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+    
+    {% include head.html %}
+    
+    <body onload="set_style_from_cookie()" data-spy="scroll">
+        
+        {% if page.disqus %}
+        <script id="dsq-count-scr" src="//joshuacoxgithubio.disqus.com/count.js" async></script>
+        {% endif %}
+        
+        {% include facebook-init.html %}
+        
+        {% include header.html %}
+        
+        {% include post-promo.html %}
+        
+        <div class= container>
+            
+            
+            <div class="content{% if page.photo_url %} photo-post{% endif %}">
+                <div class="post single">
+                    {% unless page.title_hidden %}
+                    <h1>{{ page.title }}</h1>
+                    <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+                        {{ page.date | date: "%b %d, %Y" }}
+                    </info>
+                    {% endunless %}
+                    <div class="body posts">{{ content }}</div>
+                    <!-- <div class="post single"></div> -->
+                </div>
+                <!-- <div class="content"></div> -->
+            </div>
+            <!-- <div class="breaker"></div> -->
+            <div class="breaker"></div>
+            <!-- <info class="after">
+             <div class="fb-like" data-href="http://rsms.me{{ page.url }}" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
+             </info> -->
+            
+            <p id="post-meta">{{ tags_content }}</p>
+            
+            {% include share.html %}
+            {% if page.fbcomments %}
+            <hr/>
+            <h4>Comments</h4>
+            <div class="fb-comments" data-href="http://giaithuatlaptrinh.github.io{{ page.url }}" data-colorscheme="dark" data-num-posts="4" data-width="706"></div>
+            {% endif %}
+            {% include disqus.html %}
+            
+        </div>
+        
+        {% include socialicons.html %}
+        
+        {% include googleadsensefoot.html %}
+        
+        {% include footer.html %}
+        
+        {% include scripts.html %}
+        
+        {% include googleanalytics.html %}
+        
+    </body>
+    
+</html>

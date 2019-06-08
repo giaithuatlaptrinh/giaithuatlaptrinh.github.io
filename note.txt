@@ -1,0 +1,14 @@
+run local jekyll:
+	bundle exec jekyll serve
+update Gemfile:
+	bundle install
+
+how to post: https://mmistakes.github.io/minimal-mistakes/docs/posts/
+
+jekyll post not showing up: https://mycyberuniverse.com/jekyll-post-not-showing-up.html
+
+Enable mathjax in jekyll: http://zjuwhw.github.io/2017/06/04/MathJax.html
+
+Markdown Cheatsheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
+
+Change jekyll font: http://dmcwo.github.io/Notebook-Moon//a-post-about-pages/

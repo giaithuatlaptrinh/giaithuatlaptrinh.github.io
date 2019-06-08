@@ -1,0 +1,27 @@
+# main links
+main:
+  - title: "Bài Giảng"
+    url: "lectures"
+  - title: "About"
+    url: about
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+blog-roll:
+  - title: "Igor Park"
+    url: https://igorpak.wordpress.com
+  - title: "Terry Tao"
+    url: https://terrytao.wordpress.com
+  - title: "David Eppstein"
+    url: https://11011110.github.io/blog/
+  - title: "Luca Trevisan"
+    url: https://lucatrevisan.wordpress.com
+  - title: "Van Vu"
+    url: https://vuhavan.wordpress.com
+  - title: "Dam Thanh Son"
+    url: https://damtson.wordpress.com
+ 
