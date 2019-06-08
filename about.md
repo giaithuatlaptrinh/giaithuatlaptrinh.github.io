@@ -1,6 +1,7 @@
 ---
 layout: single
 author_profile: true
+title: Chào-bạn
 sidebar:
     title: "Blogs"
     nav: blog-roll
