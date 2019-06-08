@@ -5,7 +5,7 @@ Phân tích (thời gian) thuật toán về cơ bản là đếm số thao tác
 
 Trong các kí hiệu dưới đây, $T(n)$ biểu thị một hàm số của biến (số nguyên) $n$. Thông thường ta dùng $T(n)$ để kí hiệu thời gian tính toán của một thuật toán.
 
-# Kí hiệu big-O.
+# 1. Kí hiệu big-O.
 
 ---
 **<span style="color:dodgerblue">Định nghĩa 1:</span>** Ta viết $T(n) = O(f(n))$ nếu tồn tại hằng số $c , n_0 > 0$ sao cho $T(n) \leq cf(n)$ với mọi $n \geq n_0.$
@@ -14,11 +14,11 @@ Trong các kí hiệu dưới đây, $T(n)$ biểu thị một hàm số của b
 
 Để hiểu định nghĩa 1, ta xét hai ví dụ:
 
-> ***Ví dụ 1***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta suy ra $T(n) = O(n^2)$ vì $3n^2 + 2n +4 \leq 4n^2$ với mọi $n \geq 1000$. Ở đây ta chọn $c= 4, n_0 = 1000$.
+> ***Ví dụ 1***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta suy ra $T(n) = O(n^2)$ vì $3n^2 + 2n +4 \leq 9n^2$ với mọi $n \geq 1$. Ở đây ta chọn $c= 4, n_0 = 1$.
 
-> ***Ví dụ 2***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta có thể viết  $T(n) = O(n^3)$ vì $3n^2 + 2n +4$ &lt; $n^3$ với mọi $n \geq 1000$. Ở đây ta chọn $c= 1, n_0 = 1000$.
+> ***Ví dụ 2***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta có thể viết  $T(n) = O(n^3)$ vì $3n^2 + 2n +4 \leq 9n^3$ với mọi $n \geq 1$. Ở đây ta chọn $c= 1, n_0 = 1$.
 
-Trong cả hai ví dụ ta đều xét cùng một biểu thức $T(n) = 3n^2 + 2n +4$, và theo định nghĩa 1, viết $T(n) = O(n^2)$ và $T(n) = O(n^3)$ đều đúng. Câu hỏi đặt ra là ta nên chọn cách viết nào? Thông thường ta sẽ chọn cách viết thể hiện "đúng nhất" bản chất tăng/giảm của hàm $T(n)$, do đó, trong trường hợp này ta nên viết $T(n) = O(n^2)$. Khái niệm big-O thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.
+Trong cả hai ví dụ ta đều xét cùng một biểu thức $T(n) = 3n^2 + 2n +4$, và theo định nghĩa 1, viết $T(n) = O(n^2)$ và $T(n) = O(n^3)$ đều đúng. Câu hỏi đặt ra là ta nên chọn cách viết nào? Thông thường ta sẽ chọn cách viết thể hiện "đúng nhất" bản chất tăng/giảm của hàm $T(n)$. Do đó, trong trường hợp này ta nên viết $T(n) = O(n^2)$. Khái niệm big-O thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.
 
 
 Từ định nghĩa, ta dễ dàng suy ra tính chất sau:
@@ -30,7 +30,7 @@ Từ định nghĩa, ta dễ dàng suy ra tính chất sau:
 
 *Chứng minh:* Theo định nghĩa 1, tồn tại hai hằng số (dương) $c_1$ và $n_1$ sao cho $T(n) \leq c_1f(n)$ với mọi $n\geq n_1$. Cũng theo định nghĩa 1, tồn tại hai hằng số $c_2$ và $n_2$ sao cho $f(n) \leq c_2g(n)$ với mọi $n\geq n_2$. Chọn $c_3 = c_1\cdot c_2$ và $n_3 = \max(n_1,n_2)$, ta suy ra $T(n) \leq c_3 g(n)$ với mọi $n\geq n_3$ (dpcm).
 
-# Kí hiệu $\Omega$
+# 2. Kí hiệu $\Omega$
 
 ---
 **<span style="color:dodgerblue">Định nghĩa 2:</span>** Ta viết $T(n) = \Omega(f(n))$ nếu tồn tại hai hằng số $c , n_0> 0$ sao cho $T(n) \geq cf(n)$ với mọi $n \geq n_0$.
@@ -43,7 +43,7 @@ $T(n) = \Omega(n^2)$ vì $3n^2 + 2n +4 \geq 3n^2$ với mọi $n \geq 1$. Ở đ
 
 > **Ví dụ 4:** Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 2, ta suy ra $T(n) = \Omega(n)$ vì $3n^2 + 2n +4 \geq n$ với mọi $n \geq 1$. Ở đây ta chọn $c= 1, n_0 = 1$.
 
-Như đã nói ở phần big-O, ví dụ 3 và 4 cung cấp hai cách viết khác nhau cho cùng một hàm $T(n)$, và ta thường chọn cách viết "gần nhất". Có nghĩa là ở đây ta nên viết $T(n) = \Omega(n^2)$.  Khái niệm $\Omega$ thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.
+Ví dụ 3 và 4 cung cấp hai cách viết khác nhau cho cùng một hàm $T(n)$, và tương tự như phần 1, ta thường chọn cách viết "gần nhất". Có nghĩa là ở đây ta nên viết $T(n) = \Omega(n^2)$.  Khái niệm $\Omega$ thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.
 
 ---
 **<span style="color:dodgerblue">Tính chất 2:</span>** Nếu $T(n) = \Omega(f(n))$ và $f(n) = \Omega(g(n))$ thì $T(n) = \Omega(g(n))$.
@@ -57,10 +57,11 @@ Chứng minh tương tự như tính chất 1; ta coi đây là bài tập cho b
 **<span style="color:dodgerblue">Định nghĩa 3:</span>** Ta viết $T(n) = \Theta(f(n))$ nếu $T(n) = O(f(n))$ và $T(n) = \Omega(n)$. 
 
 ---
-> **Ví dụ 5:** Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 3 $T(n) = \Theta(n^2)$ vì
-$T(n) = O(n^2)$ (theo định nghĩa 1) và $T(n) = \Omega(n)$ theo định nghĩa 2.
+> **Ví dụ 5:** Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 3, $T(n) = \Theta(n^2)$ vì
+$T(n) = O(n^2)$ (theo định nghĩa 1) và $T(n) = \Omega(n)$ (theo định nghĩa 2).
 
-Như vậy, nếu $T(n) = \Theta(f(n))$, điều đó có nghĩa là thuật toán đó có thời gian chạy *"đúng"* là $f(n)$. Khái niệm $\Theta$ phù hợp để phân tích cả cận trên và cận dưới của thuật toán.
+Như vậy, nếu $T(n) = \Theta(f(n))$, thì về mặt trực quan, thuật toán đó có thời gian chạy *"đúng"* là $f(n)$. Khái niệm $\Theta$ phù hợp để phân tích cả cận trên và cận dưới của thuật toán. Khi phân tích thuật toán, lý tưởng nhất là ta có thể biểu diễn thời gian bằng kí hiệu $\Theta(f(n))$ của một hàm $f(n)$ đơn giản nào đó, ví dụ như $n^2$ hay $n \log n$. Tuy nhiên, với hầu hết các bài toán phân tích và thiết kế, hiếm khi ta có thể chứng minh được thời gian là 
+$\Theta(f(n))$.
 
 Một câu hỏi cho bạn đọc tự suy nghẫm: nếu viết hàm $T(n)$ trong ví dụ 5 là $T(n) = \Theta(n^3)$ thì có đúng hay không?
 
@@ -75,10 +76,13 @@ Một câu hỏi cho bạn đọc tự suy nghẫm: nếu viết hàm $T(n)$ tro
 
 Chú ý, hằng số $n_0$ có thể phụ thuộc vào $c$.  Xét ví dụ áp dụng sau:
 
->**Ví dụ 6**: Cho $T(n) = 3n^2 + 2n +4$.  Theo định nghĩa 4, với mọi hằng số $c > 0$ bất kì,  $T(n) \leq  c\cdot n^3$ với mọi $n\geq \max(\frac{9}{c}, 1)$ vì:
+>**Ví dụ 6**: Cho $T(n) = 3n^2 + 2n +4$.  Theo định nghĩa 4, ta có thể viết $T(n) = o(n^3)$ vì
+với mọi hằng số $c > 0$ bất kì,  ta có thể chứng minh được $T(n) \leq  c\cdot n^3$ với mọi $n\geq \max(\frac{9}{c}, 1)$; ở đây ta chọn $n_0 = \max(\frac{9}{c}, 1)$. Thật vậy:
 >  $$cn^3 = c \cdot n \cdot n^2 \geq 9n^2 \geq 3n^2 + 2n + 4$$
 
-Ý nghĩa của $o(.)$ đó là nếu $T(n) = o(f(n))$ thì $T(n)$ tăng chậm hơn $f(n)$ "rất nhiều" khi $n$ đủ lớn. Hình sau minh hoạ các khái niệm một cách trực quan hơn.
+Ý nghĩa của $o(.)$ đó là nếu $T(n) = o(f(n))$ thì $T(n)$ tăng chậm hơn $f(n)$ "rất nhiều" khi $n$ đủ lớn. 
+
+Hình sau minh hoạ các khái niệm trong bài này một cách trực quan hơn.
 
 <img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2015/05/growth-rate.png" alt="Hình 1">
 
