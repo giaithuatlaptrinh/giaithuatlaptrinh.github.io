@@ -10,5 +10,5 @@ sidebar:
 ----
 # Phân tích và thiết kế thuật toán
 * Bài 1: [Khái niệm tiệm cận.](/Khái-niệm-tiệm-cận/)
-* Bài 2: [Giải hệ thức truy hồi](/Hệ-thức-truy-hồi/)
+* Bài 2: [Giải hệ thức truy hồi](/Hệ-thức-truy-hồi/)
 
