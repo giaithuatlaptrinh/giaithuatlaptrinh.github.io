@@ -2,7 +2,7 @@
 
 [comment]: <> Bài này mình hướng đến các bạn mới bắt đầu học thuật toán với mục đích giúp các bạn làm quen với một số khái niệm như $O(.), o(.), \Omega(.), \Theta(.)$. Mình đã có <a href="http://www.giaithuatlaptrinh.com/?p=27">một bài riêng</a> định nghĩa các khái niệm này một cách hình thức. Bài này mình bổ sung các định nghĩa đó bằng những giải thích trực quan hơn.
 
-Khi nói đến một thuật toán người ta thường quan tâm đến hai câu hỏi: (1) thuật toán có dừng hay không và (2) thuật toán tiêu tốn bao nhiều tài nguyên tính toán. Câu hỏi (1) thường không khó để trả lời (nhưng không phải lúc nào cũng dễ). Câu hỏi (2) yêu cầu định nghĩa chi tiết thế nào là tài nguyên tính toán. Trong bài này, ta sẽ tìm hiểu sơ lược cách thức trả lời cả hai câu hỏi.
+Khi nói đến một thuật toán người ta thường quan tâm đến hai câu hỏi: (1) thuật toán có dừng hay không và (2) thuật toán tiêu tốn bao nhiều tài nguyên tính toán. (Một câu hỏi không kém phần quan trọng nữa là thuật toán có đúng hay không, có nghĩa là nó có thực hiện đúng những yêu cầu mà nó phải thực hiện hay không; câu trả lời cho câu hỏi này phụ thuộc vào từng bài toán cụ thể nên ta tạm chưa xét ở đây; các bài sau ta sẽ tìm hiểu chi tiết hơn.) Câu hỏi (1) thường không khó để trả lời (nhưng không phải lúc nào cũng dễ). Câu hỏi (2) yêu cầu định nghĩa chi tiết thế nào là tài nguyên tính toán. Trong bài này, ta sẽ tìm hiểu sơ lược cách thức trả lời cả hai câu hỏi.
 
 # 1. Tính dừng của thuật toán
 
