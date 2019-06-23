@@ -54,11 +54,11 @@ Chứng minh tương tự như tính chất 1; ta coi đây là bài tập cho b
 # Khái niệm $\Theta$
 
 ---
-**<span style="color:dodgerblue">Định nghĩa 3:</span>** Ta viết $T(n) = \Theta(f(n))$ nếu $T(n) = O(f(n))$ và $T(n) = \Omega(n)$. 
+**<span style="color:dodgerblue">Định nghĩa 3:</span>** Ta viết $T(n) = \Theta(f(n))$ nếu $T(n) = O(f(n))$ và $T(n) = \Omega(f(n))$. 
 
 ---
 > **Ví dụ 5:** Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 3, $T(n) = \Theta(n^2)$ vì
-$T(n) = O(n^2)$ (theo định nghĩa 1) và $T(n) = \Omega(n)$ (theo định nghĩa 2).
+$T(n) = O(n^2)$ (theo định nghĩa 1) và $T(n) = \Omega(n^2)$ (theo định nghĩa 2).
 
 Như vậy, nếu $T(n) = \Theta(f(n))$, thì về mặt trực quan, thuật toán đó có thời gian chạy *"đúng"* là $f(n)$. Khái niệm $\Theta$ phù hợp để phân tích cả cận trên và cận dưới của thuật toán. Khi phân tích thuật toán, lý tưởng nhất là ta có thể biểu diễn thời gian bằng kí hiệu $\Theta(f(n))$ của một hàm $f(n)$ đơn giản nào đó, ví dụ như $n^2$ hay $n \log n$. Tuy nhiên, với hầu hết các bài toán phân tích và thiết kế, hiếm khi ta có thể chứng minh được thời gian là 
 $\Theta(f(n))$.
