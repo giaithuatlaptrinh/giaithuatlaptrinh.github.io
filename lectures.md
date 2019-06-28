@@ -12,3 +12,4 @@ sidebar:
 * Bài 1: [Khái niệm tiệm cận.](/Khái-niệm-tiệm-cận/)
 * Bài 2: [Giải hệ thức truy hồi](/Hệ-thức-truy-hồi/)
 * Bài 3: [Phân tích thuật toán](/Phân-t%C3%ADch-thuật-toán/)
+* Bài 4: [Quay lui](/Quay-lui/)
