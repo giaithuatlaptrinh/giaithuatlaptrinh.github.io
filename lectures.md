@@ -14,3 +14,4 @@ sidebar:
 * Bài 3: [Phân tích thuật toán](/Phân-t%C3%ADch-thuật-toán/)
 * Bài 4: [Quay lui](/Quay-lui/)
 * Bài 5: [Chia để trị I](/Chia-để-trị-I/)
+* Bài 6: [Chi để trị II](/Chia-để-trị-2/)
