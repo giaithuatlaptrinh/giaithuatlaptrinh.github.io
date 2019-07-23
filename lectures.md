@@ -15,3 +15,4 @@ sidebar:
 * Bài 4: [Quay lui](/Quay-lui/)
 * Bài 5: [Chia để trị I](/Chia-để-trị-I/)
 * Bài 6: [Chi để trị II](/Chia-để-trị-2/)
+* Bài 6: [Thuật toán tham lam](/Giải-thuật-tham-lam/)
