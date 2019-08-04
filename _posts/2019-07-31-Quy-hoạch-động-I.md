@@ -47,6 +47,7 @@ Giá trị của hàm Fibonacci $F(n)$ chính là $F[n]$.  Như vậy ta đã th
 &nbsp;&nbsp;&nbsp; return $F[n]$<br/>
 </div>
 &nbsp;
+
 Tính đúng đắn của thuật toán có thể chứng minh trực tiếp từ định nghĩa. Do thuật toán chỉ thực hiện một phép cộng trong mỗi vòng lặp for, tổng số phép cộng thực hiện là $n-1 = O(n)$. Thuật toán này nhanh hơn luỹ thừa lần thuật toán đệ quy theo định nghĩa.
 
 **Tổng kết:** Đối chiếu lại với những gì đã nói đầu tiên, rõ ràng thuật toán quy hoạch động cho bài toán Fibonacci thực hiện lưu kết quả tính vào bảng $F[.]$, do đó, nó cải thiện được rất nhiều so với đệ quy. Tuy nhiên, cách mã hoá bài toán con của bài toán Fibonacci khá rõ ràng, mỗi bài toán con "tính số Fibonacci thứ $i$" được mã hoá bằng một chỉ số $i$. Do đó, ta có thể truy nhập lời giải của bài toán con chỉ bằng cách gọi $F[i]$. Thông thường các bài toán giải được một cách hiệu quả bằng phương pháp quy hoạch động, cách mã hoá bài toán con không đơn giản như vậy. Xét bài toán tiếp theo đây.
@@ -106,9 +107,9 @@ Theo định nghĩa, $L[i+1]$ chính là chiều dài của dãy con tăng dài 
 
 **Tính đúng đắn của thuật toán:** Tnh đúng đắn của thuật toán có thể chứng minh bằng quy nạp, dựa trên định nghĩa của mảng $L$ và nhữn gì ta đã thảo luận ở trên. Chỉ có một điểm đáng lưu ý ở đây là dòng 9 và 10. Hai dòng này chỉ được thực thi khi *không* có phần tử nào của mảng con $A[1,\ldots, i-1]$ nhỏ hơn hoặc bằng $A[i]$. Tức là dãy con tăng dài nhất kết thúc tại $A[i]$ chỉ chứa $A[i]$. Khi đó $L[i]$ được gán giá trị $1$ tại dòng 10. Dòng 11 ta phải trừ đi $1$ vì dãy con tăng dài nhất sẽ kết thúc tại phần tử thêm vào $A[n+1]$ ở đầu thuật toán.
 
-**Thời gian tính toán:** Ta thực hiện hai vòng lặp lồng nhau ở dòng 3 và dòng 5. Tổng số lần lặp là $\sum_{i=1}^{n+1} \sum_{j=1}^{i-1} 1 = \Theta(n^2)$. Do mỗi vòng lặp ta chỉ thực hiện một hằng số phép toán cơ bản, do đó, thời gian tính toán của thuật toán là $O(n^2)$.
+**Thời gian tính toán:** Ta thực hiện hai vòng lặp lồng nhau ở dòng 3 và dòng 5. Tổng số lần lặp là $\sum_{i=2}^{n+1} \sum_{j=1}^{i-1} 1 = \Theta(n^2)$. Do mỗi vòng lặp ta chỉ thực hiện một hằng số phép toán cơ bản, do đó, thời gian tính toán của thuật toán là $O(n^2)$.
 
-**Truy vết lời giải:**  Ta dựa vào mảng $L[1,2,\ldots, n]$ để truy vết tìm dãy con tăng dài nhất. Ý tưởng cơ bản như sau: giả sử ta có chiều dài của dãy con tăng dài nhất là $M$ (đã tính được bởi thuật toán ở trên). Vì $L[i]$ là chiều dài của dãy con tăng lớn nhất của mảng $A[1,2,\ldots, i]$ kết thúc bởi $A[i]$, chỉ số $i$ lớn nhất sao cho $B[i] = M$ chính là chỉ số của phần tử cuối cùng của mảng con tăng lớn nhất của $A[1,2,\ldots, n]$. 
+**Truy vết lời giải:**  Ta dựa vào mảng $L[1,2,\ldots, n]$ để truy vết tìm dãy con tăng dài nhất. Ý tưởng cơ bản như sau: giả sử ta có chiều dài của dãy con tăng dài nhất là $M$ (đã tính được bởi thuật toán ở trên). Vì $L[i]$ là chiều dài của dãy con tăng lớn nhất của mảng $A[1,2,\ldots, i]$ kết thúc bởi $A[i]$, chỉ số $i$ lớn nhất sao cho $L[i] = M$ chính là chỉ số của phần tử cuối cùng của mảng con tăng lớn nhất của $A[1,2,\ldots, n]$. 
 
 Giả mã của thuật toán truy vết như sau:
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"> <u style="font: normal verdana; font-variant: small-caps"> PrintLIS</u>($A[1,2,\ldots, n], L[1,\ldots, n]$):<br/>
