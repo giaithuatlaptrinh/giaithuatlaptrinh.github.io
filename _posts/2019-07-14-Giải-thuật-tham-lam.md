@@ -89,7 +89,7 @@ Trong câu trả lời cho câu hỏi 1, ta lưu theo thứ tự $2,1$ có chi p
 **Tính đúng đắn của thuật toán**
 
 Ta sử dụng ý tưởng tương tự trong trường hợp tần số bằng $1$. Giả sử tồn tại một cách lưu trữ tối ưu $\pi$ và chỉ số $i$ sao cho $\frac{L[\pi(i)]}{F[\pi(i)]} > \frac{L[\pi(i+1)]}{F[\pi(i+1)]}$. Gọi $\pi'$ là hoán vị thu được từ $\pi$ bằng cách đổi chỗ $L[\pi(i)]$ và $L[\pi(i+1)]$. Ta có:
-<p style="text-align: center;"> $\begin{array} {lcl} Cost_{\pi} - Cost_{\pi'} &amp; = &amp;  F[\pi(i)]C(\pi(i)) + F[\pi(i+1)]C(\pi(i+1)) \\ &amp;  &amp; - F[\pi'(i)]C(\pi'(i)) - F[\pi'(i+1)]C(\pi'(i+1))\\ &amp; = &amp; F[\pi(i+1)]L[\pi(i)] -  F[\pi(i)]L[\pi(+1i)] > 0 \end{array}$</p>
+<p style="text-align: center;"> $\begin{array} {lcl} Cost_{\pi} - Cost_{\pi'} &amp; = &amp;  F[\pi(i)]C(\pi(i)) + F[\pi(i+1)]C(\pi(i+1)) \\ &amp;  &amp; - F[\pi'(i)]C(\pi'(i)) - F[\pi'(i+1)]C(\pi'(i+1))\\ &amp; = &amp; F[\pi(i+1)]L[\pi(i)] -  F[\pi(i)]L[\pi(i+1)] > 0 \end{array}$</p>
 vì $\frac{L[\pi(i)]}{F[\pi(i)]} > \frac{L[\pi(i+1)]}{F[\pi(i+1)]}$.  Do đó, $Cost_{\pi} > Cost_{\pi'}$, trái với giả thiết $\pi(i)$ là cách lưu trữ tối ưu.
 
 <hr width = "20%">
