@@ -167,6 +167,7 @@ Bạn có thể thử phương pháp trên cho bài toán lưu trữ file trên 
 [3] Cormen, Thomas H.; Leiserson, Charles E., Rivest, Ronald L., Stein, Clifford.<i>Introduction to Algorithms (2nd ed.)</i> . MIT Press and McGraw-Hill (2001). ISBN 0-262-03293-7.<br/>
 
 
+> **Ghi chú**: Cám ơn bạn Huy Nguyen đã chỉ ra nhiều lỗi và góp ý trên bài viết gốc. 
 
 # 4. Bài tập
 
