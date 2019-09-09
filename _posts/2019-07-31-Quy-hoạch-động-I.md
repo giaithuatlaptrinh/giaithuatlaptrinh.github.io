@@ -78,7 +78,7 @@ Phân tích trên gợi ý cho ta cách "mã hoá" bài toán con như sau:
 
 <p>Gọi $L[i]$ với $i \geq j$ là chiều dài của dãy con tăng dài nhất của $A[1,2,\ldots,i]$ kết thúc bằng $A[i]$.  </p>
 
-Ban đầu, ta khởi tạo mảng  $L[1] = 1$ và các phần tử còn lại chỉ toàn là $0$. Nên nhớ khi ta tìm lời giải của $A[1,2,\ldots, i+1]$, ta có thể giả sử lởi giải của $A[1,\ldots, j]$ *với mọi $j < i+1$* đều đã sẵn có trong bảng $L$, hay nói cách khác, $L[j]$ đều lớn hơn $0$ với mọi $i < j+1$. 
+Ban đầu, ta khởi tạo mảng  $L[i] = 1$ với mọi $i, 1\leq i \leq n$. (Lý do ta khởi tạo $1$ là vì $A[1,2,\ldots, i]$ luôn có một dãy con có chiều dài $1$ [chỉ bao gồm $A[i]$] kết thúc tại $A[i]$.) Nên nhớ rằng khi ta tìm lời giải của $A[1,2,\ldots, i+1]$, ta có thể giả sử lởi giải của $A[1,\ldots, j]$ *với mọi $j < i+1$* đều đã sẵn có trong bảng $L$. 
 
 > Ví dụ 3: Xét $n = 10$ và mảng $A[10] = \{1,5,2,3,6,4,8,7,9,0,10\}$, và $i =5$. Ta sẽ có $L[1] = 1, L[2] = 2, L[3] = 2, L[4] = 3, L[5] = 6$. Câu hỏi đặt ra cho bạn: $L[6]$ có giá trị bao nhiêu? 
 
@@ -91,23 +91,21 @@ Theo định nghĩa, $L[i+1]$ chính là chiều dài của dãy con tăng dài 
 Để tránh phải duyệt qua toàn bộ mảng $L$ để tìm lời giải, ta áp dụng một mẹo nhỏ: thêm phần tử $A[n+1]$ có giá trị cực lớn, đảm bảo lớn hơn mọi phần tử của mảng $A$. Như vậy mảng con tăng dài nhất sẽ *luôn kết thúc tại $A[n+1]$*.  Chi tiết giả mã như sau:
 
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"><u style="font: normal verdana; font-variant: small-caps"> LongestIncreasingSubsequence</u>($A[1,2,\ldots, n]$):<br/>
-1.&nbsp;&nbsp;&nbsp; $L[1] \leftarrow 1$ and $L[i] \leftarrow 0$ for all $1\leq i \leq n+1$<br/>
-2.&nbsp;&nbsp;&nbsp; $A[n+1] \leftarrow \infty$<br/>
-3.&nbsp;&nbsp;&nbsp; <b>for </b>$i \leftarrow 2$ to $n+1$<br/>
-4.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; max $\leftarrow  0$<br/>
+1.&nbsp;&nbsp;&nbsp; <b>for </b>$i \leftarrow 1$ to $n+1$<br/>
+2.&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $L[i] \leftarrow 1$<br/> 
+3.&nbsp;&nbsp;&nbsp; $A[n+1] \leftarrow \infty$<br/>
+4.&nbsp;&nbsp;&nbsp; <b>for </b>$i \leftarrow 2$ to $n+1$<br/>
 5.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; <b>for </b> $j \leftarrow 1$ to $i-1$<br/>
-6.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; <b>if</b> $A[i] \geq A[j]$ and $L[j] >$ max <br/>
-7.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; max $\leftarrow L[j]$<br/>
-8.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $L[i] \leftarrow L[j] + 1$<br/>
-9.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; <b>if </b>max $=  1$<br/>
-10.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   $L[i] \leftarrow 1$<br/>
-11.&nbsp;&nbsp;&nbsp;  return $L[n+1]-1$<br/>
+6.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; <b>if</b> $A[i] \geq A[j]$<br/>
+7.&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $L[i]\leftarrow \max(L[i], L[j] + 1)$<br/>
+8.&nbsp;&nbsp;&nbsp;  return $L[n+1]-1$<br/>
 </div>
 &nbsp;
 
-**Tính đúng đắn của thuật toán:** Tnh đúng đắn của thuật toán có thể chứng minh bằng quy nạp, dựa trên định nghĩa của mảng $L$ và nhữn gì ta đã thảo luận ở trên. Chỉ có một điểm đáng lưu ý ở đây là dòng 9 và 10. Hai dòng này chỉ được thực thi khi *không* có phần tử nào của mảng con $A[1,\ldots, i-1]$ nhỏ hơn hoặc bằng $A[i]$. Tức là dãy con tăng dài nhất kết thúc tại $A[i]$ chỉ chứa $A[i]$. Khi đó $L[i]$ được gán giá trị $1$ tại dòng 10. Dòng 11 ta phải trừ đi $1$ vì dãy con tăng dài nhất sẽ kết thúc tại phần tử thêm vào $A[n+1]$ ở đầu thuật toán.
+**Tính đúng đắn của thuật toán:**  Điểm đáng chú ý duy nhất của thuật toán là dòng 6 và 7. Giá trị của $L[i]$ chỉ thay đổi khi $L[i] \geq A[j]$ và chỉ số $j$ hiện tại có giá trị $L[j]$ lớn nhất trong số tất cả các chỉ thuộc tập $\{1,2,\ldots, j\}$. Phần còn lại của tính đúng đắn của thuật toán có thể chứng minh bằng quy nạp, dựa trên định nghĩa của mảng $L$ và nhữn gì ta đã thảo luận ở trên. 
 
-**Thời gian tính toán:** Ta thực hiện hai vòng lặp lồng nhau ở dòng 3 và dòng 5. Tổng số lần lặp là $\sum_{i=2}^{n+1} \sum_{j=1}^{i-1} 1 = \Theta(n^2)$. Do mỗi vòng lặp ta chỉ thực hiện một hằng số phép toán cơ bản, do đó, thời gian tính toán của thuật toán là $O(n^2)$.
+
+**Thời gian tính toán:** Ta thực hiện hai vòng lặp lồng nhau ở dòng 4 và 5. Tổng số lần lặp là $\sum_{i=2}^{n+1} \sum_{j=1}^{i-1} 1 = \Theta(n^2)$. Do mỗi vòng lặp ta chỉ thực hiện một hằng số phép toán cơ bản, do đó, thời gian tính toán của thuật toán là $O(n^2)$.
 
 **Truy vết lời giải:**  Ta dựa vào mảng $L[1,2,\ldots, n]$ để truy vết tìm dãy con tăng dài nhất. Ý tưởng cơ bản như sau: giả sử ta có chiều dài của dãy con tăng dài nhất là $M$ (đã tính được bởi thuật toán ở trên). Vì $L[i]$ là chiều dài của dãy con tăng lớn nhất của mảng $A[1,2,\ldots, i]$ kết thúc bởi $A[i]$, chỉ số $i$ lớn nhất sao cho $L[i] = M$ chính là chỉ số của phần tử cuối cùng của mảng con tăng lớn nhất của $A[1,2,\ldots, n]$. 
 
@@ -124,6 +122,8 @@ Giả mã của thuật toán truy vết như sau:
 
 Dễ thấy thời gian để tìm các phần tử của mảng con tăng là $O(n)$. Tính đúng đắn của thuật toán coi như bài tập cho bạn đọc.
 
+
+> ***Lời cám ơn:*** Cám ơn bạn Xuan Tu đã đưa ra cách đơn giản hoá giả mã của thuật toán <span style="font: normal verdana; font-variant: small-caps"> LongestIncreasingSubsequence</span> trong phiên bản trước đây của bài viết.
 
 # 3. Tham khảo
 
