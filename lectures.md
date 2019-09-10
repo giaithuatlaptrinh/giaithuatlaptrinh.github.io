@@ -17,3 +17,4 @@ sidebar:
 * Bài 6: [Chi để trị II](/Chia-để-trị-2/)
 * Bài 7: [Thuật toán tham lam](/Giải-thuật-tham-lam/)
 * Bài 8: [Quy hoạch động I](/Quy-hoạch-động-I/)
+* Bài 9: [Quy hoạch động II](/Quy-hoạch-động-2/)
