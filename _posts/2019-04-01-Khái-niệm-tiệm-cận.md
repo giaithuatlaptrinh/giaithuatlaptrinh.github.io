@@ -14,9 +14,9 @@ Trong các kí hiệu dưới đây, $T(n)$ biểu thị một hàm số của b
 
 Để hiểu định nghĩa 1, ta xét hai ví dụ:
 
-> ***Ví dụ 1***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta suy ra $T(n) = O(n^2)$ vì $3n^2 + 2n +4 \leq 9n^2$ với mọi $n \geq 1$. Ở đây ta chọn $c= 4, n_0 = 1$.
+> ***Ví dụ 1***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta suy ra $T(n) = O(n^2)$ vì $3n^2 + 2n +4 \leq 9n^2$ với mọi $n \geq 1$. Ở đây ta chọn $c= 9, n_0 = 1$.
 
-> ***Ví dụ 2***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta có thể viết  $T(n) = O(n^3)$ vì $3n^2 + 2n +4 \leq 9n^3$ với mọi $n \geq 1$. Ở đây ta chọn $c= 1, n_0 = 1$.
+> ***Ví dụ 2***: Cho $T(n) = 3n^2 + 2n +4$. Theo định nghĩa 1, ta có thể viết  $T(n) = O(n^3)$ vì $3n^2 + 2n +4 \leq 9n^3$ với mọi $n \geq 1$. Ở đây ta chọn $c= 9, n_0 = 1$.
 
 Trong cả hai ví dụ ta đều xét cùng một biểu thức $T(n) = 3n^2 + 2n +4$, và theo định nghĩa 1, viết $T(n) = O(n^2)$ và $T(n) = O(n^3)$ đều đúng. Câu hỏi đặt ra là ta nên chọn cách viết nào? Thông thường ta sẽ chọn cách viết thể hiện "đúng nhất" bản chất tăng/giảm của hàm $T(n)$. Do đó, trong trường hợp này ta nên viết $T(n) = O(n^2)$. Khái niệm big-O thường phù hợp để phân tích cận dưới của thời gian tính toán của một thuật toán.
 
