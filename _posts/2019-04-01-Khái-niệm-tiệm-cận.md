@@ -51,7 +51,7 @@ Ví dụ 3 và 4 cung cấp hai cách viết khác nhau cho cùng một hàm $T(
 ---
 Chứng minh tương tự như tính chất 1; ta coi đây là bài tập cho bạn đọc.
 
-# Khái niệm $\Theta$
+# 3. Kí hiệu $\Theta$
 
 ---
 **<span style="color:dodgerblue">Định nghĩa 3:</span>** Ta viết $T(n) = \Theta(f(n))$ nếu $T(n) = O(f(n))$ và $T(n) = \Omega(f(n))$. 
@@ -66,7 +66,7 @@ $\Theta(f(n))$.
 Một câu hỏi cho bạn đọc tự suy nghẫm: nếu viết hàm $T(n)$ trong ví dụ 5 là $T(n) = \Theta(n^3)$ thì có đúng hay không?
 
 
-# Khái niệm $o$ 
+# 4. Kí hiệu $o$ 
 
 ---
 **<span style="color:dodgerblue">Định nghĩa 4:</span>** Ta viết $T(n) = o(f(n))$ nếu *với mọi* hằng số $c > 0$, tồn tại hằng số $ n_0 > 0$ sao cho: $T(n) \leq cf(n)$ với mọi $n \geq n_0.$ 
@@ -88,14 +88,14 @@ Hình sau minh hoạ các khái niệm trong bài này một cách trực quan h
 
 > Hình (a) minh hoạ trường hợp $f(n) = \Theta(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm giữa  hai đường cong $c_1 g(n)$ và $c_2 g(n)$ với $c_2 \geq c_1$ là hai hằng số (nào đó). Hình (b) minh hoạ trường hợp $f(n) = O(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm dưới đường cong $c g(n)$ với $c$ là một hằng số (nào đó).  Hình (c) minh hoạ trường hợp $f(n) = \Omega(g(n))$. Khi $n\geq n_0$ thì đường cong $f(n)$ sẽ nằm trên đường cong $c g(n)$ với $c$ là một hằng số (nào đó). (Hình được lấy từ tài liệu tham khảo [1].)
 
-# Tham khảo 
+# 5. Tham khảo 
 
 [1] Cormen, Thomas H.; Leiserson, Charles E., Rivest, Ronald L., Stein, Clifford (2001) [1990]. <b><i> Introduction to Algorithms (2nd ed.) </i></b>. MIT Press and McGraw-Hill. ISBN 0-262-03293-7.
 
 [2] Avrim Blum: Lecture notes on Algorithms, <a href="http://www.cs.cmu.edu/afs/cs/academic/class/15451-f11/www/lectures/lects1-10.pdf">http://www.cs.cmu.edu/afs/cs/academic/class/15451-f11/www/lectures/lects1-10.pdf</a> . Carnegie Mellon University, 2011.
 
 
-# Bài tập
+# 6. Bài tập
 
 
 **Bài tập 1:** Cho $T(n) = 2n + 1$. 
