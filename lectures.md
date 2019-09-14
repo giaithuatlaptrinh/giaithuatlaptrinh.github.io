@@ -18,7 +18,7 @@ sidebar:
 * Bài 7: [Thuật toán tham lam](/Giải-thuật-tham-lam/)
 * Bài 8: [Quy hoạch động I](/Quy-hoạch-động-I/)
 * Bài 9: [Quy hoạch động II](/Quy-hoạch-động-2/)
-* Bài 10: [Nhập môn đồ thị]()
+* Bài 10: [Nhập môn đồ thị](/Nhập-môn-đồ-thị/)
 * Bài 11: [Cây khung nhỏ nhất]()
 * Bài 12: [Đường đi ngắn nhất]()
 * Bài 13: [Luồng trong mạng]()
