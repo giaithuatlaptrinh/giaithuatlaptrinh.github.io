@@ -27,7 +27,7 @@ Chứng minh các tính chất trên không khó, và ta sẽ coi như bài tậ
 
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"><span style="color:dodgerblue"><b> Lát cắt (Cut): </b></span> Gọi $A$ là một tập đỉnh của đồ thị. Lát cắt tương ứng với $A$, kí hiệu là $(A,V\setminus A)$, là tập <b>tất cả</b> các cạnh của $G$ có đúng một đầu mút  nằm trong $A$ (đầu mút còn lại nằm trong $V\setminus A$).</div><br/>
 
-> Ví dụ 2: Lát cắt tương ứng với $\{a,b,c\}$ của đồ thị trong hình (a) là các cạnh màu đỏ trong hình (b). <br/>
+> Ví dụ 2: Lát cắt tương ứng với ${(a,b,c)}$ của đồ thị trong hình (a) là các cạnh màu đỏ trong hình (b). <br/>
 ><img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2016/05/cut-example.png" alt="cut-example">
 
 Một số tính chất sau của cây khung  <b>nhỏ nhất</b> sẽ rất hữu ích trong thiết kế thuật toán.
@@ -41,9 +41,9 @@ Một số tính chất sau của cây khung  <b>nhỏ nhất</b> sẽ rất h�
 
 Phương pháp chứng minh các tính chất trên đều giống nhau, sử dụng phương pháp lập luận tráo đổi (exchange argument). Ta sẽ chứng minh tính chất (4) và (5) để minh họa cho phương pháp chứng minh này.  Chứng minh (6) dễ hơn (4) và (5); chi tiết coi như bài tập cho bạn đọc.
 
-**Chứng minh:** (4) Giả sử cạnh $e$ lớn hơn các cạnh khác trong cùng một chu trình $C$ và giả sử một cây khung nhỏ nhất $T$ chứa $e$. Xóa $e$ khỏi $T$, ta sẽ thu được hai cây $F_1,F_2$. Do $C$ là một chu trình, tồn tại một cạnh khác $e$, gọi là $f$,  của $T$ nối $F_1$ với $F_2$. Do đó $T\cup \{f\} - \{e\}$ là một cây khung của $G$ có trọng số nhỏ hơn $T$ (vì $w(f) < w(e)$), trái với giả thiết $T$ là một cây khung nhỏ  nhất.
+**Chứng minh:** (4) Giả sử cạnh $e$ lớn hơn các cạnh khác trong cùng một chu trình $C$ và giả sử một cây khung nhỏ nhất $T$ chứa $e$. Xóa $e$ khỏi $T$, ta sẽ thu được hai cây $F_1,F_2$. Do $C$ là một chu trình, tồn tại một cạnh khác $e$, gọi là $f$,  của $T$ nối $F_1$ với $F_2$. Do đó $T\cup {(f)} - {(e)}$ là một cây khung của $G$ có trọng số nhỏ hơn $T$ (vì $w(f) < w(e)$), trái với giả thiết $T$ là một cây khung nhỏ  nhất.
 
-(5) Giả sử cạnh $e$ nhỏ hơn các cạnh khác trong cùng một lát cắt $L$ và giả sử tồn tại một cây khung nhỏ nhất $T$ <b>không</b> chứa $e$. Thêm $e$ vào $T$, ta sẽ thu được một chu trình $C$ chứa $e$. Do $L$ là lát cắt, $C$ phải chứa ít nhất một cạnh $f\not= e$ của $L$. Do đó, $T\cup \{e\} - \{f\}$ là một cây khung của $G$ có trọng số nhỏ hơn $T$ (do $w(e) > w(f)$), trái với giả thiết $T$ là một cây khung nhỏ  nhất. $\blacksquare$
+(5) Giả sử cạnh $e$ nhỏ hơn các cạnh khác trong cùng một lát cắt $L$ và giả sử tồn tại một cây khung nhỏ nhất $T$ <b>không</b> chứa $e$. Thêm $e$ vào $T$, ta sẽ thu được một chu trình $C$ chứa $e$. Do $L$ là lát cắt, $C$ phải chứa ít nhất một cạnh $f\not= e$ của $L$. Do đó, $T\cup {(e)} - {(f)}$ là một cây khung của $G$ có trọng số nhỏ hơn $T$ (do $w(e) > w(f)$), trái với giả thiết $T$ là một cây khung nhỏ  nhất. $\blacksquare$
 
 
 # 2. Thuật toán Kruskal
@@ -60,8 +60,8 @@ Ta sẽ cắt nghĩa từ *nếu có thể* ở trên. Tưởng tượng ta sẽ
 2.&nbsp;&nbsp;&nbsp; sort edges in $E$ in $\uparrow$ order of weight<br/>
 3.&nbsp;&nbsp;&nbsp; let $e_1,\ldots, e_m$ be edges in the sorted ofder.<br/>
 4.&nbsp;&nbsp;&nbsp; <b>for</b> $i \leftarrow 1$ to $m$<br/>
-5.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <font color="red"><b>if</b> $T\cup \{e_i\}$ has no cycle</font><br/>
-6.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $T\leftarrow T\cup \{e_i\}$<br/>
+5.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <font color="red"><b>if</b> $T\cup {(e_i)}$ has no cycle</font><br/>
+6.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $T\leftarrow T\cup {(e_i)}$<br/>
 7.&nbsp;&nbsp;&nbsp; return $T$.<br/>
 </div><br/>
 
@@ -76,30 +76,30 @@ Tất cả các bước của thuật toán Kruskal đều không khó thực th
 
 Ta phải chứng minh hai điều: (a) đầu ra của thuật toán là một cây khung và (b) cây  đó có trọng số nhỏ nhất trong số tất cả các cây khung của đồ thị. 
 
-Ta sẽ chứng minh (a) trước. Đầu tiên, ta dễ thấy đầu ra $T$ không có chu trình vì dòng 5 của thuật toán sẽ đảm bảo điều này. Như vậy, $T$ sẽ là cây nếu liên thông (chỉ có duy nhất một thành phần liên thông). Giả sử đầu ra không liên thông, $T$ sẽ có ít nhât hai thành phần liên thông (mỗi thành phần liên thông có thể chỉ là 1 đỉnh). Chọn hai thành phần liên thông $F_1,F_2$ của $T$, sao cho tồn tại một cạnh của $G$ nối hai thành phần này. Ta luôn chọn được  vì $G$ liên thông. Gọi $e_k$ là cạnh có trọng số nhỏ nhất nối $F_1,F_2$. Cạnh $e_k$ này không thuộc $T$ vì nếu không $F_1,F_2$ sẽ là chỉ là một thành phần mà thôi. Nhưng khi kiểm tra điều kiện ở dòng màu đỏ, $T\cup \{e_k\}$ rõ ràng không có chu trình. Điều đó có nghĩa ta sẽ thêm $e_k$ vào trong $T$ ngay sau đó. Điều này trái với giả sử $e_k$ không thuộc $T$. Do đó $T$ phải liên thông, i.e, $T$ là một cây.
+Ta sẽ chứng minh (a) trước. Đầu tiên, ta dễ thấy đầu ra $T$ không có chu trình vì dòng 5 của thuật toán sẽ đảm bảo điều này. Như vậy, $T$ sẽ là cây nếu liên thông (chỉ có duy nhất một thành phần liên thông). Giả sử đầu ra không liên thông, $T$ sẽ có ít nhât hai thành phần liên thông (mỗi thành phần liên thông có thể chỉ là 1 đỉnh). Chọn hai thành phần liên thông $F_1,F_2$ của $T$, sao cho tồn tại một cạnh của $G$ nối hai thành phần này. Ta luôn chọn được  vì $G$ liên thông. Gọi $e_k$ là cạnh có trọng số nhỏ nhất nối $F_1,F_2$. Cạnh $e_k$ này không thuộc $T$ vì nếu không $F_1,F_2$ sẽ là chỉ là một thành phần mà thôi. Nhưng khi kiểm tra điều kiện ở dòng màu đỏ, $T\cup {(e_k)}$ rõ ràng không có chu trình. Điều đó có nghĩa ta sẽ thêm $e_k$ vào trong $T$ ngay sau đó. Điều này trái với giả sử $e_k$ không thuộc $T$. Do đó $T$ phải liên thông, i.e, $T$ là một cây.
 
 Giờ ta sẽ chứng minh (b). Do thuật toán Krukal là một thuật toán tham lam, ta sẽ dùng phép biện luận tráo đổi như đã áp dụng trong bài thuật toán [tham lam](https://giaithuatlaptrinh.github.io/Giải-thuật-tham-lam/).  Gọi $F$ là một cây khung nhỏ nhất của $G$ sao cho số cạnh chung giữa $F$ và $T$ là lớn nhất. Nếu $F = T$ thì rõ ràng $T$ là một cây khung nhỏ nhất. Do đó, giả sử $F \not= T$.
 
-Gọi $T = \{t_1,t_2, \ldots, t_{n-1}\}$ và $F = \{f_1,f_2,\ldots,f_{n-1}\}$ lần lượt là thứ tự các cạnh của $T$ và $F$ sắp xếp theo chiều tăng của trọng số. Gọi $i$ là chỉ số nhỏ nhất sao cho cạnh $t_i$ và cạnh $f_i$ là hai cạnh khác nhau. Theo cách chọn $i$, ta suy ra $i \leq n-2$ và $f_k = t_k, 1 \leq  k \leq i-1$. Do đó, $\{t_1,\ldots, t_{i-1}\} \cup \{f_i\}$ không có chu trình.
+Gọi $T = {(t_1,t_2, \ldots, t_{n-1})}$ và $F = {(f_1,f_2,\ldots,f_{n-1})}$ lần lượt là thứ tự các cạnh của $T$ và $F$ sắp xếp theo chiều tăng của trọng số. Gọi $i$ là chỉ số nhỏ nhất sao cho cạnh $t_i$ và cạnh $f_i$ là hai cạnh khác nhau. Theo cách chọn $i$, ta suy ra $i \leq n-2$ và $f_k = t_k, 1 \leq  k \leq i-1$. Do đó, ${(t_1,\ldots, t_{i-1})} \cup {(f_i)}$ không có chu trình.
 
-Ta sẽ có $w(t_i) \leq w(f_i)$, vì nếu không, dòng màu đỏ trong thuật toán sẽ kiểm tra cạnh $f_i$ <b>trước khi</b> kiểm tra cạnh $t_i$, và do $\{t_1,\ldots, t_{i-1}\} \cup \{f_i\}$ không có chu trình, $f_i$ sẽ được thêm vào $T$ trước $t_i$. Hay nói cách khác, $f_i$ chính là cạnh thứ $i$ của $T$; trái với giả thiết $f_i \not= t_i$.
+Ta sẽ có $w(t_i) \leq w(f_i)$, vì nếu không, dòng màu đỏ trong thuật toán sẽ kiểm tra cạnh $f_i$ <b>trước khi</b> kiểm tra cạnh $t_i$, và do ${(t_1,\ldots, t_{i-1})} \cup {(f_i)}$ không có chu trình, $f_i$ sẽ được thêm vào $T$ trước $t_i$. Hay nói cách khác, $f_i$ chính là cạnh thứ $i$ của $T$; trái với giả thiết $f_i \not= t_i$.
 
-Xét đồ thị $H = F \cup \{t_i\}$. $H$ sẽ có một chu trình $C$. Chu trình $C$ có hai tính chất sau:
+Xét đồ thị $H = F \cup {(t_i)}$. $H$ sẽ có một chu trình $C$. Chu trình $C$ có hai tính chất sau:
 <ol>
 <li> $C$ chứa $t_i$. Nếu không, $C$ sẽ là một chu trình của $F$, trái với giả thiết $F$ là một cây.</li>
-<li> $C$ chứa ít nhất một cạnh $f_j$ sao cho $j \geq i $. Nếu không, $C$ là tập con của $\{f_1,\ldots,f_{i-1}\} \cup {t_i}$; tập này cũng chính là tập $\{t_1,\ldots, t_i\}$. Hay nói cách khác $C$ là tập con của $T$, trái với tính chất $T$ là một cây.</li>
+<li> $C$ chứa ít nhất một cạnh $f_j$ sao cho $j \geq i $. Nếu không, $C$ là tập con của ${(f_1,\ldots,f_{i-1})} \cup {t_i}$; tập này cũng chính là tập ${(t_1,\ldots, t_i)}$. Hay nói cách khác $C$ là tập con của $T$, trái với tính chất $T$ là một cây.</li>
 </ol>
-Gọi $F' = H - \{f_j\}$; $F'$ là một cây (tại sao?). Do $w(f_j) \geq w(f_i) \geq w(t_i)$, $w(F') \leq w(F)$. Từ đó suy ra $F'$ cũng là một cây khung nhỏ nhất. Nhưng rõ ràng $F'$ có số cạnh chung với $T$ nhiều hơn $F$. Điều này trái với giả thiết $F$ là cây khung nhỏ nhất có số cạnh chung nhiều nhất với $T$. Như vậy, $F = T$, i.e, $T$ là cây khung nhỏ nhất.
+Gọi $F' = H - {(f_j)}$; $F'$ là một cây (tại sao?). Do $w(f_j) \geq w(f_i) \geq w(t_i)$, $w(F') \leq w(F)$. Từ đó suy ra $F'$ cũng là một cây khung nhỏ nhất. Nhưng rõ ràng $F'$ có số cạnh chung với $T$ nhiều hơn $F$. Điều này trái với giả thiết $F$ là cây khung nhỏ nhất có số cạnh chung nhiều nhất với $T$. Như vậy, $F = T$, i.e, $T$ là cây khung nhỏ nhất.
 
 
 ## 2.2. Thực thi thuật toán Kruskal
 
 Như đã chỉ ra ở trên, ta chỉ cần thực hiện dòng 5 của thuật toán Kruskal một cách hiệu quả. Phép duyệt đồ thị cho ta thuật toán với thời gian $O(n)$ để thực hiện dòng này. Phần này ta đưa ra một cách nhìn khác, cho phép ta thực thi nó hiệu quả hơn. 
 
-Ta nhận xét thấy trong mỗi bước trung gian, $T$ là một rừng, i.e, mỗi thành phần liên thông của $T$ là một cây. Phép kiểm tra xem $T\cup \{e\}$ có chu trình hay không tương đương với kiểm tra xem hai đầu mút, gọi là $u,v$, của $e$ có thuộc **cùng một cây** trong rừng $T$ hay không.
+Ta nhận xét thấy trong mỗi bước trung gian, $T$ là một rừng, i.e, mỗi thành phần liên thông của $T$ là một cây. Phép kiểm tra xem $T\cup {(e)}$ có chu trình hay không tương đương với kiểm tra xem hai đầu mút, gọi là $u,v$, của $e$ có thuộc **cùng một cây** trong rừng $T$ hay không.
 <ol>
-<li type="a">Nếu $u,v$ thuộc cùng một cây, $T\cup \{e\}$ sẽ có chu trình.</li>
-<li>Ngược lại, $T\cup \{e\}$ không có chu trình, và phép thêm $e$ vào $T$ sẽ tương đương với gộp 2 cây con của $T$ thành một cây mới bằng cạnh $e$.</li>
+<li type="a">Nếu $u,v$ thuộc cùng một cây, $T\cup {(e)}$ sẽ có chu trình.</li>
+<li>Ngược lại, $T\cup {(e)}$ không có chu trình, và phép thêm $e$ vào $T$ sẽ tương đương với gộp 2 cây con của $T$ thành một cây mới bằng cạnh $e$.</li>
 </ol>
 Ta có thể biểu diễn mỗi cây của $T$ bằng **một tập hợp**: các đỉnh thuộc cùng một cây khi và chỉ khí nó nằm trong cùng một tập. Giả sử mỗi tập có một ID duy nhất để định danh tập hợp đó; hai tập khác nhau có ID  khác nhau. Hai thao tác ta cần để thực hiện thuật toán Kruskal là:
 
@@ -108,7 +108,7 @@ Ta có thể biểu diễn mỗi cây của $T$ bằng **một tập hợp**: c�
 <li><b><font style="font: normal verdana; font-variant: small-caps">Union</font>($x,y$)</b>: Thay thế hai tập hợp $A,B$ lần lượt chứa $x$ và $y$ bằng tập hợp $A \cup B$. Ở đây ta giả sử phép <font style="font: normal verdana; font-variant: small-caps">Union</font> luôn gộp 2 phần tử thuộc hai tập khác nhau.</li>
 </ol>
 
-Ngoài ra, ta còn thêm thao tác <b><font style="font: normal verdana; font-variant: small-caps">MakeSet</font>($x$)</b> để tạo tập hợp  chỉ chứa một phần tử $\{x\}$. Khi đó thuật toán Kruskal có thể được thực hiện như sau: 
+Ngoài ra, ta còn thêm thao tác <b><font style="font: normal verdana; font-variant: small-caps">MakeSet</font>($x$)</b> để tạo tập hợp  chỉ chứa một phần tử ${(x)}$. Khi đó thuật toán Kruskal có thể được thực hiện như sau: 
 
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"><u style="font: normal verdana; font-variant: small-caps"> KruskalUnionFind</u>($G(V,E),w$):<br/>
 1.&nbsp;&nbsp;&nbsp; $T \leftarrow (V, \emptyset)$    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  $\ll $ there is no edge in $T \gg$<br/>
@@ -119,7 +119,7 @@ Ngoài ra, ta còn thêm thao tác <b><font style="font: normal verdana; font-va
 6.&nbsp;&nbsp;&nbsp; <b>for</b> $i \leftarrow 1$ to $m$<br/>
 7.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; let $u,v$ be two endpoints of $e_i$<br/>
 8.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <font color="red"><b>if</b> <font style="font: normal verdana; font-variant: small-caps"> Find</font>$(u) \not= $ <font style="font: normal verdana; font-variant: small-caps"> Find</font>($v$)</font><br/>
-9.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $T\leftarrow T\cup \{e_i\}$<br/>
+9.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $T\leftarrow T\cup {(e_i)}$<br/>
 10.&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <font color="red"><font style="font: normal verdana; font-variant: small-caps"> Union</font>$(u,v)$</font><br/>
 11.&nbsp;&nbsp;&nbsp; return $T$.<br/>
 </div>
@@ -136,8 +136,6 @@ Ta sẽ dùng cấu trúc cây để biểu diễn một tập hợp. Mảng $P[
 Ví dụ 4 cho ta một ý tưởng chọn gốc: khi gộp tập $A,B$ tương ứng với gốc tại $a,b$, ta sẽ để nút biểu diễn tập **có kích thước lớn hơn**  làm gốc của tập mới; nếu hai tập có kích thước bằng nhau thì chọn tuỳ ý một trong hai nút. Áp dụng cho ví dụ 4, ta sẽ thấy cây thu được có độ sâu $1$; nhỏ hơn nhiều so với độ sâu mong muốn $O(\log n)$.
 
 Để thực hiện gộp theo kích thước, ta sẽ lưu trữ ở gốc $u$ của mỗi cây một biến $S[u]$ lưu trữ kích thước của cây. Giả mã của các thao tác biểu diễn tập hợp của ta sẽ như sau:
-
-Giả mã:
 <div style=" width: 120px; padding: 6px; color: black; background-color: white; border: black 2px solid;"> <u style="font: normal verdana; font-variant: small-caps"> MakeSet</u>($x$):<br/>
 &nbsp;&nbsp;&nbsp; $P[x] \leftarrow x$<br/>
 &nbsp;&nbsp;&nbsp; $S[x] \leftarrow 1$<br/>
@@ -173,10 +171,10 @@ Thuật toán Prim [5] tìm cây khung nhỏ nhất dựa trên tính cắt (tí
 
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"> <u style="font: normal verdana; font-variant: small-caps"> Prim</u>($G(V,E),w$):<br/>
 1.&nbsp;&nbsp;&nbsp; pick any vertex $u$<br/>
-2.&nbsp;&nbsp;&nbsp; $T\leftarrow \{u \}$<br/>
+2.&nbsp;&nbsp;&nbsp; $T\leftarrow {(u )}$<br/>
 3.&nbsp;&nbsp;&nbsp; <b>while</b> $T \not= V$     &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $\ll T$ does not contain all vertices$\gg$<br/>
 4.<font color="red">   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $e \leftarrow$ the smallest edge of the cut $(T,V\setminus T)$</font><br/>
-5.&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $T \leftarrow T \cup \{e\}$<br/>
+5.&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $T \leftarrow T \cup {(e)}$<br/>
 6.&nbsp;&nbsp;&nbsp; return $T$<br/>
 </div><br/>
 
@@ -194,11 +192,11 @@ Trường hợp tồn tại các cạnh có cùng trọng số, để chứng mi
 
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"><span style="color:dodgerblue"><b> Bổ đề 1: </b></span > Gọi $e$ là cạnh có trọng số nhỏ nhất của một lát cắt $(A,V\setminus A)$. Tồn tại một cây khung nhỏ nhất $T$ của đồ thị chứa cạnh $e$.</div>
 <br/>
-**Chứng minh:** Thật vậy, gọi $F$ là một cây khung nhỏ nhất nhất không chứa $e$. Ta có $F\cup \{e\}$ sẽ chứa một chu trình $C$. Chu trình này phải chứ $e$. Do đó, $|C \cap (A, V\setminus A)| \not= \emptyset$. Do $C$ là một chu trình, nó sẽ chứa một số chẵn cạnh của lát cắt $(A, V\setminus A)$; nói cách khác, tồn tại một cạnh $f$ khác $e$ nằm trong cắt $(A, V\setminus A)$. Thêm nữa, $w(f)\geq w(e)$, do $e$ là cạnh có trọng số nhỏ nhất.
+**Chứng minh:** Thật vậy, gọi $F$ là một cây khung nhỏ nhất nhất không chứa $e$. Ta có $F\cup {(e)}$ sẽ chứa một chu trình $C$. Chu trình này phải chứ $e$. Do đó, $|C \cap (A, V\setminus A)| \not= \emptyset$. Do $C$ là một chu trình, nó sẽ chứa một số chẵn cạnh của lát cắt $(A, V\setminus A)$; nói cách khác, tồn tại một cạnh $f$ khác $e$ nằm trong cắt $(A, V\setminus A)$. Thêm nữa, $w(f)\geq w(e)$, do $e$ là cạnh có trọng số nhỏ nhất.
 
 <img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2016/05/cut-edge-mst.png" alt="cut-edge-in-mst">
 
-Gọi $T = F\cup \{e\} \setminus \{f\}$. $T$ là một cây khung của đồ thị và do $w(e) \leq w(f)$, ta suy ra $w(T) \leq w(F)$. Do đó, $T$ cũng phải là một cây khung nhỏ nhất vì $F$ là cây khung nhỏ nhất. Như vậy, $T$ là một cây khung nhỏ nhất chứa $e$. $\blacksquare$
+Gọi $T = F\cup {(e)} \setminus {(f)}$. $T$ là một cây khung của đồ thị và do $w(e) \leq w(f)$, ta suy ra $w(T) \leq w(F)$. Do đó, $T$ cũng phải là một cây khung nhỏ nhất vì $F$ là cây khung nhỏ nhất. Như vậy, $T$ là một cây khung nhỏ nhất chứa $e$. $\blacksquare$
 
 Theo bổ đề $1$, đầu ra của thuật toán Prim cũng phải là cây khung nhỏ nhất mỗi cạnh của nó là một cạnh có trọng số nhỏ nhất của một lát cắt nào đó. $\blacksquare$
 
@@ -213,8 +211,8 @@ Theo bổ đề $1$, đầu ra của thuật toán Prim cũng phải là cây kh
 Còn một vấn đề nữa, đó là sau khi thêm một cạnh vào trong cây khung hiện tại $T$, ta phải cập nhật lại nhãn cho các đỉnh còn lại. Giả sử cạnh $(u,v)$, với $v = M[u]$, sẽ được thêm vào cây khung. Giả sử trước khi thêm cạnh này, $u \not\in T$. Để cập nhật nhãn, ta duyệt qua các đỉnh còn lại trong $V\setminus T$ và với mỗi đỉnh $x$, ta so sánh trọng số $w(u,x)$ với $d[x]$. Nếu $w(u,x)< d[x]$, ta sẽ cập nhật $d[x] = w(u,x)$ và $M[x] = u$. Nếu không ta sẽ giữ nguyên trọng số. Thao tác cập nhật này có thể thực hiện trong thời gian $O(n)$, do đó, tổng thời gian của thuật toán sẽ là $O(n^2)$.
 <div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"><u style="font: normal verdana; font-variant: small-caps"> FastPrim</u>($G(V,E),w$):<br/>
 &nbsp;&nbsp;&nbsp; pick any vertex $u$<br/>
-&nbsp;&nbsp;&nbsp; $M[1,\ldots, n] \leftarrow \{0,\ldots,0\}$<br/>
-&nbsp;&nbsp;&nbsp; $d[1, \ldots,n] \leftarrow \{\infty, \ldots, \infty\}$<br/>
+&nbsp;&nbsp;&nbsp; $M[1,\ldots, n] \leftarrow {(0,\ldots,0)}$<br/>
+&nbsp;&nbsp;&nbsp; $d[1, \ldots,n] \leftarrow {(\infty, \ldots, \infty)}$<br/>
 &nbsp;&nbsp;&nbsp; <b>for</b> each neighbor $x$ of $u$<br/>
 &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $M[x] \leftarrow u$<br/>
 &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $d[x] \leftarrow w(u,x)$<br/>
@@ -225,7 +223,7 @@ Còn một vấn đề nữa, đó là sau khi thêm một cạnh vào trong câ
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <b>if</b> $x \not\in T$ and $w(u,x)$ &lt; $d[x]$<br/>
 &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $M[x] \leftarrow u$<br/>
 &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $d[x] \leftarrow w(u,x)$<br/>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $T \leftarrow T \cup \{(u,M[u])\}$       &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $\ll $ add edge $(u,M[u])$ to $ T\gg$<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $T \leftarrow T \cup {((u,M[u]))}$       &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $\ll $ add edge $(u,M[u])$ to $ T\gg$<br/>
 &nbsp;&nbsp;&nbsp; return $T$<br/>
 </div><br/>
 
