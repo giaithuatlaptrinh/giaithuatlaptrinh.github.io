@@ -184,7 +184,7 @@ Thuật toán Prim [5] tìm cây khung nhỏ nhất dựa trên tính cắt (tí
 > <img src="http://www.giaithuatlaptrinh.com/wp-content/uploads/2016/05/prim-example.png" alt="prim-example">
 
 
-## 3.1. Tính đúng đắn của thuật toán Prim:
+## 3.1. Tính đúng đắn của thuật toán Prim
 
 Không khó để thấy rằng đầu ra của thuật toán Prim là một cây, vì ta không bao giờ đưa vào $T$ một cạnh giữa hai đỉnh đã thuộc $T$, theo định nghĩa của lát cắt. Do đó, ta chỉ còn cần chứng minh đầu ra là một cây khung nhỏ nhất.
 
