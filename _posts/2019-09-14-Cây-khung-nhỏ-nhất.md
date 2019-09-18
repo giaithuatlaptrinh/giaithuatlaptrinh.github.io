@@ -220,7 +220,7 @@ Còn một vấn đề nữa, đó là sau khi thêm một cạnh vào trong câ
 &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $d[x] \leftarrow w(u,x)$<br/>
 &nbsp;&nbsp;&nbsp; $T \leftarrow \emptyset$<br/>
 &nbsp;&nbsp;&nbsp; <b>while</b> $T \not= V$     &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; $\ll T$ does not contain all vertices$\gg$<br/>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $u \leftarrow$ <font style="font: normal verdana; font-variant: small-caps"> FindSmallestVertex</font>$(M[1,\ldots,V])$<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $u \leftarrow$ <font style="font: normal verdana; font-variant: small-caps"> FindSmallestVertex</font>$(d[1,\ldots,V], T)$<br/>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b>for</b> each neighbor $x$ of $u$<br/>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <b>if</b> $x \not\in T$ and $w(u,x)$ &lt; $d[x]$<br/>
 &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $M[x] \leftarrow u$<br/>
@@ -229,13 +229,11 @@ Còn một vấn đề nữa, đó là sau khi thêm một cạnh vào trong câ
 &nbsp;&nbsp;&nbsp; return $T$<br/>
 </div><br/>
 
-<div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"> <u style="font: normal verdana; font-variant: small-caps"> FindSmallestVertex</u>($d[1,\ldots,n]$):<br/>
-&nbsp;&nbsp;&nbsp; $min \leftarrow +\infty$<br/>
-&nbsp;&nbsp;&nbsp;  $u \leftarrow 0$<br/>
+<div style="padding: 6px; color: black; background-color: white; border: black 2px solid;"> <u style="font: normal verdana; font-variant: small-caps"> FindSmallestVertex</u>($d[1,\ldots,n], T$):<br/>
+&nbsp;&nbsp;&nbsp; $min \leftarrow +\infty, u \leftarrow 0$<br/>
 &nbsp;&nbsp;&nbsp; <b>for</b> each $v \in V$<br/>
 &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; <b>if</b> $d[v]$ &lt; $min$ and $v \not\in T$<br/>
-&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $min \leftarrow d[v]$<br/>
-&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $u \leftarrow v$<br/>
+&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; $min \leftarrow d[v], u \leftarrow v$<br/>
 &nbsp;&nbsp;&nbsp; return $u$<br/>
 </div><br/>
 
